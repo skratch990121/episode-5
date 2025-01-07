@@ -1,3 +1,6 @@
+using System.Threading.Tasks.Sources;
+using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class VariableType : MonoBehaviour
@@ -27,24 +30,70 @@ public class VariableType : MonoBehaviour
         // Debug.Log($"정수(integer) = {intType}");
         // sizeof(int) = 무언가의 크기를 가져오는 함수 
 
+        
+
     }
 
 
     void Start()
     {
-        Debug.Log(sizeof(float));
-        Debug.Log(sizeof(int));
-        Debug.Log(sizeof(long));
-        Debug.Log(sizeof(short));
-        Debug.Log($"결과 : int : {sizeof(int)} , long : {sizeof(long)} , short : {sizeof(short)} , byte : {sizeof(byte)} , float : {sizeof(float)}");
+        // Debug.Log(sizeof(float));
+        // Debug.Log(sizeof(int));
+        // Debug.Log(sizeof(long));
+        // Debug.Log(sizeof(short));
+        // Debug.Log($"결과 : int : {sizeof(int)} , long : {sizeof(long)} , short : {sizeof(short)} , byte : {sizeof(byte)} , float : {sizeof(float)}");
+        
+        // floatType = 3.141592f;
+        // Debug.Log($"플로트타입(floatType) = {floatType}");
+        
+        // doubleType = 3.14;
+        // Debug.Log($"더블타입(doubleType) = {doubleType}");
+
+        // intType = (int)3.14;
+
+        // Debug.Log($"인트타입(intType) = {intType}");
+
+        // floatType = (float)intType;
+        // Debug.Log($"{floatType}");
+
+        // stringType.Length 
+
+        // string result = $"문자 내용은 {stringType}입니다";
+        
+        // string result2 = $"문자의 길이는 {stringType.Length}입니다";
+
+
+        // Debug.Log(result2);
+        // 부울의 크기
+        string boolsize = $"boolsize = {sizeof(bool)}";
+        
+        // 부울의 값
+        string boolvalue = $"boolvalue = {boolType}";
+        
+        
+        Debug.Log(boolvalue);
+
     }
+
         //
         // 실수 타입
         //
         [Header("실수 타입")]
-        // float : -3.402823e+38 ~ 3.402823e+38 , 크기 : 4
+       
 
-    public float floatType;
+    // float : -3.402823e+38 ~ 3.402823e+38 , 크기 : 4 byte
+    // public float floatType = 0.0f;
+    // // double : 8 byte
+    // public double doubleType = 0.0;
+    // // decimal : 16 byte
+    // public decimal decimalType = 0;
+
+    [Header("문자타입")]
+    public string stringType = "";
+    
+    [Header("부울타입")]
+    // 값 : True or False , 크기 : byte
+    public bool boolType;
     
 }
 
