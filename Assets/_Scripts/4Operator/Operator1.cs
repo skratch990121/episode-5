@@ -15,12 +15,28 @@ public class Operator : MonoBehaviour
     public float A;
     public float B;
     public float C;
+    public int a;
+    public int b;
+    public int age = 20;
+    public int age2 = 18;
+    public int kg;
+    public int kg2;
 
+   
     [Header("연산자 결과")]
-    [ReadOnly]
-    public bool andOP; // AND 연산 결과
-    public bool orOP; // OR 연산 결과
-    public bool notOP; // NOT 연산 결과
+     
+    [ReadOnly] public bool andOP; // AND 연산 결과
+    [ReadOnly] public bool orOP; // OR 연산 결과
+    [ReadOnly] public bool notOP; // NOT 연산 결과
+    [ReadOnly] public bool ifOP; // 상황 연산 결과
+    [ReadOnly] public string ifOPstring; // 상황 연산 문자 결과
+    // [ReadOnly] public string ifOPstring2;
+
+    [ReadOnly] public string agestring;
+    [ReadOnly] public string kgstring;
+
+
+
 
     void Start()
     {
@@ -43,12 +59,12 @@ public class Operator : MonoBehaviour
         // bool A op B ? 16 >= 7 : True
 
         // 숫자
-        Debug.Log($"{A == B}");
-        Debug.Log($"{A != B}");
-        Debug.Log($"{A <= B}");
-        Debug.Log($"{A >= B}");
-        Debug.Log($"{A < B}");
-        Debug.Log($"{A > B}");
+        // Debug.Log($"{A == B}");
+        // Debug.Log($"{A != B}");
+        // Debug.Log($"{A <= B}");
+        // Debug.Log($"{A >= B}");
+        // Debug.Log($"{A < B}");
+        // Debug.Log($"{A > B}");
 
         // 문자
         // Debug.Log($"{tA == tB}");
@@ -66,10 +82,15 @@ public class Operator : MonoBehaviour
 
 
         // 반환 : True, False 순서 ()
-        bool result = (A == B) && (B == C);
+        // bool result = (A == B) && (B == C);
 
-        Debug.Log(result);
+        // Debug.Log(result);
 
+
+    // 상황연산
+    // 조건1 ? TRUE : FALSE;
+
+    
 
 
     }
@@ -79,17 +100,32 @@ public class Operator : MonoBehaviour
     {
 
 
-        bool result = (A == B) && (B == C);
-        andOP = result;
-        Debug.Log(andOP);
+        // bool result = (A == B) && (B == C);
+        // andOP = result;
+        // Debug.Log(andOP);
 
-        bool result2 = (A == B) || (B == C);
-        orOP = result2;
-        Debug.Log(orOP);
+        // bool result2 = (A == B) || (B == C);
+        // orOP = result2;
+        // Debug.Log(orOP);
 
         // bool result3 = (A == B) ! (B == C);
         // notOP = result3;
         // Debug.Log(notOP);
+
+        // ifOP = A == B ? true : false;
+
+        // ifOPstring = A == B ? "A B 가 같다" : "A B 가 다르다";
+         
+        // ifOPstring2 = (a <= b) || (a >= b) ? "a b 는 성인이다" : "a b 는 성인이 아니다";
+
+        
+
+        // agestring = age > 19 ? "성인" : "미성년";
+
+        agestring = isAdult(age);
+
+        kgstring = isBMI(kg);
+        
 
     }
 
@@ -99,6 +135,9 @@ public class Operator : MonoBehaviour
         return a % b;
     }
 
+    
+    
+
 
     // bool : True, False
     // 비교 연산
@@ -107,5 +146,24 @@ public class Operator : MonoBehaviour
     //     // == : ? 같으면 True, 다르면 False
     //     return x == y;
     // }
+
+
+
+    
+    // 19세이상이면 성인 19세이하면 미성년
+
+    string isAdult(int a)
+    {
+        return agestring = a > 19 ? "성인" : "미성년";
+    }
+   
+
+   string isBMI(int k)
+   {
+
+    return kgstring = k > 60 ? "과체중" : "저체중";
+
+   }
+   
 
 }
