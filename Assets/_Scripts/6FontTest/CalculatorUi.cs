@@ -35,19 +35,19 @@ public class CalculatorUi : MonoBehaviour
         //더하기
         info = $"{Add(A, B)}";
         tmpinfo.text = info;
-        title = $"{A}+{B}";
+        title = $"{A} + {B} =";
         tmptitle.text = title; 
 
         //나누기
-        info2 = $"{Divide(A, B)}";
+        info2 = $"{Div(A, B)}";
         tmpinfo2.text = info2;
-        title2 = $"{A}÷{B}";
+        title2 = $"{A} ÷ {B} =";
         tmptitle2.text = title2; 
 
         //나머지
-        info3 = $"{Remain(A, B)}";
+        info3 = $"{Mod(A, B)}";
         tmpinfo3.text = info3;
-        title3 = $"{A}%{B}";
+        title3 = $"{A} % {B} =";
         tmptitle3.text = title3; 
 
 
@@ -65,13 +65,13 @@ public class CalculatorUi : MonoBehaviour
     }
 
     // 나누기 메소드
-    float Divide(float a, float b)
+    float Div(float a, float b)
     {
         return a / b;
     }
 
     // 나머지 메소드
-    int Remain(int a, int b)
+    int Mod(int a, int b)
     {
         return a % b;
     }
